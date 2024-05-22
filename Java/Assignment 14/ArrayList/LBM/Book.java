@@ -11,6 +11,7 @@ class Book {
         this.author = author;
         this.yearPublished = yearPublished;
     }
+
     // Getters and setters
     public String getISBN() {
         return ISBN;

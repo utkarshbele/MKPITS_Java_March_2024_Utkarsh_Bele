@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.Scanner;
 public class Main {
     //Program 1 Student Management System using Array list
-    public static ArrayList<Student> students = new ArrayList<Student>();
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -21,73 +19,26 @@ public class Main {
                     String name = scanner.next();
                     System.out.print("Enter student grade: ");
                     String grade = scanner.next();
-                    addStudent(id,name,grade);
+                    StudentManagementSystem.addStudent(id,name,grade);
                     break;
                 case 2:
                     System.out.print("Enter student ID to remove: ");
                     id = scanner.nextInt();
-                    removeStudent(id);
+                    StudentManagementSystem.removeStudent(id);
                     break;
                 case 3:
                     System.out.print("Enter student ID to search: ");
                     id = scanner.nextInt();
-                    searchStudent(id);
+                    StudentManagementSystem.searchStudent(id);
                     break;
                 case 4:
-                    displayAllStudents();
+                    StudentManagementSystem.displayAllStudents();
                     break;
                 case 5:
                     System.out.println("Exiting...");
                     return;
                 default:
                     System.out.println("Invalid choice. Please enter again.");
-            }
-        }
-    }
-
-    private static void addStudent(int id, String name, String grade) {
-        students.add(new Student(id, name, grade));
-        System.out.println("Student added successfully.");
-    }
-
-    private static void removeStudent(int id) {
-        boolean removed = false;
-        for (Student student : students) {
-            if (student.getId() == id) {
-                students.remove(student);
-                removed = true;
-                System.out.println("Student removed successfully.");
-                break;
-            }
-        }
-        if (!removed) {
-            System.out.println("Student not found.");
-        }
-    }
-
-    private static void searchStudent(int id) {
-        boolean found = false;
-        for (Student student : students) {
-            if (student.getId() == id) {
-                System.out.println("Student found:");
-                System.out.println(student);
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("Student not found.");
-        }
-    }
-
-    private static void displayAllStudents() {
-        if (students.isEmpty()) {
-            System.out.println("No students to display.");
-        } else {
-            //Sort students by grade using comparable inteface
-            Collections.sort(students);
-            for (Student student : students) {
-                System.out.println(student);
             }
         }
     }

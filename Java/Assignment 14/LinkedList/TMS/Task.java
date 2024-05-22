@@ -1,13 +1,9 @@
 package Assinment14.LinkedList.TMS;
-
-import java.util.Date;
-
-public class Task {
-    private String taskName, priority;
-    Date dueDate;
+public class Task implements Comparable<Task>{
+    private String taskName, priority, dueDate;
     private int taskId;
 
-    public Task(int taskID, String taskName, String priority, Date dueDate) {
+    public Task(int taskID, String taskName, String priority, String dueDate) {
         this.taskName = taskName;
         this.priority = priority;
         this.dueDate = dueDate;
@@ -15,12 +11,12 @@ public class Task {
     }
 
     // Getters and setters
-    public int getTaskID() {
-        return taskId;
+    public String getTaskName() {
+        return taskName;
     }
 
-    public void setTaskID(int taskID) {
-        this.taskId = taskID;
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public String getPriority() {
@@ -31,24 +27,25 @@ public class Task {
         this.priority = priority;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
+    public int getTaskId() {
+        return taskId;
     }
 
     @Override
     public String toString() {
         return "Task Name: " + taskName + ", Task ID: " + taskId + ", Priority: " + priority + ", Due Date: " + dueDate;
+    }
+
+    @Override
+    public int compareTo(Task task) {
+        return dueDate.compareTo(((Task)task).dueDate);
     }
 }

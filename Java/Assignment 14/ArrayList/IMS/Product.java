@@ -1,5 +1,4 @@
 package Assinment14.ArrayList.IMS;
-
 //Inventory management System
 public class Product{
     private int productID;

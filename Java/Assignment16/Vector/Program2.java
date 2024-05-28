@@ -1,4 +1,4 @@
-package Assignment16;
+package Assignment16.Vector;
 import java.util.*;
 
 //Write a Java program that sorts a vector of integers in ascending order using the Vector class.
@@ -63,7 +63,7 @@ public class Program2 {
         //Bubble sort
         bubbleSort(vector);
         System.out.println(vector);
-        //selection sor
+        //selection sort
         selectionSort(vector);
         System.out.println(vector);
         //insertion sort

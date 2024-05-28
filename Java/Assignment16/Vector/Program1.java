@@ -1,4 +1,4 @@
-package Assignment16;
+package Assignment16.Vector;
 
 import java.util.Vector;
 

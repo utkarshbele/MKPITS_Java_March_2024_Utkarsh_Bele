@@ -66,10 +66,7 @@ select bin(film_id) from film;
 #33. **Convert the rental duration of each film to a hexadecimal value.**
 select hex(rental_duration) from film;
 #34. **Find all films with a replacement cost that is a power of 2.**
-SELECT film_id, title, replacement_cost
-FROM film WHERE replacement_cost IN (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536);
-#or
-select if(mod(replacement_cost,2)!=0 and mod(replacement_cost,2)=1,"yes","no") from film;
+select if(mod(floor(replacement_cost),2)!=0 and mod(floor(replacement_cost),2)=1,"yes","no") from film;
 #35. **Check if the length of the film title is even or odd.**
 select  title, if(mod(char_length(title),2)=0,"Even","Odd") from film; 
 #36. **Find all films with a rental rate greater than 3 and categorize them as 'High' or 'Low'.**

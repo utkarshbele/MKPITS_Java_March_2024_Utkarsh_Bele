@@ -9,7 +9,7 @@ public int findMax(int[] arr) {
     return max;
 }
 Time Complexity-O(n)
-Space Complexity-O(n)
+Space Complexity-O(1)
 
 Problem 2: Sum of Elements in an Array
 public int sumArray(int[] arr) {
@@ -20,7 +20,7 @@ public int sumArray(int[] arr) {
     return sum;
 }
 Time Complexity-O(n)
-Space Complexity-O(n)
+Space Complexity-O(1)
 
 Problem 3: Reverse a String
 public String reverseString(String str) {
@@ -43,7 +43,7 @@ public boolean isSorted(int[] arr) {
     return true;
 }
 Time Complexity-O(n)
-Space Complexity-O(n)
+Space Complexity-O(1)
 
 Problem 5: Count Occurrences of a Number in an Array
 public int countOccurrences(int[] arr, int target) {
@@ -56,7 +56,7 @@ public int countOccurrences(int[] arr, int target) {
     return count;
 }
 Time Complexity-O(n)
-Space Complexity-O(n)
+Space Complexity-O(1)
 
 Problem 6: Merge Two Sorted Arrays
 public int[] mergeSortedArrays(int[] arr1, int[] arr2) {
@@ -130,7 +130,7 @@ public int binarySearch(int[] arr, int target) {
     return -1;
 }
 Time Complexity-O(log n)
-Space Complexity-O(n)
+Space Complexity-O(1)
 
 Problem 10: Compute Fibonacci Numbers
 public int fibonacci(int n) {

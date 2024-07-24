@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            gap: 10px;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: lightblue;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Media query for screens smaller than 600px */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Single column */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ### 3. **Creating a Grid Layout**
+**Problem Statement:**
+Create a responsive grid layout with three columns that rearranges into a single column on smaller screens. -->
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+    </div>
+</body>
+</html>

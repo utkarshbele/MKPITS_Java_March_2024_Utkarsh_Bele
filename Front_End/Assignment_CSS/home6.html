@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .animated-div {
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation: moveRight 5s linear infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- ### 6. **Creating a Simple CSS Animation**
+**Problem Statement:**
+Animate a `div` to move from left to right across the screen over 5 seconds. -->
+<div class="animated-div">Hello</div>
+</body>
+</html>

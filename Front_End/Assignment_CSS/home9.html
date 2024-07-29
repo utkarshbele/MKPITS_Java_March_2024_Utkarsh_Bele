@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Gallery container styling */
+.gallery {
+    display: grid;
+    grid-gap: 10px;
+}
+
+/* Responsive grid columns */
+@media (min-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Image styling */
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+/* Hover effect on images */
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <!-- ### 9. **Creating a Responsive Image Gallery**
+**Problem Statement:**
+Design a responsive image gallery with CSS Grid that adjusts the number of columns based on the screen size. -->
+<h1>Responsive Image Gallery</h1>
+    <div class="gallery">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+        <img src="batman.jpg">
+    </div>
+</body>
+</html>

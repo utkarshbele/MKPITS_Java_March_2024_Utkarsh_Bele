@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="address" class="demo.Address">
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+
+	<bean id="s1" class="demo.Student">
+		<constructor-arg value="99" type="int"></constructor-arg>
+		<constructor-arg value="Utkarsh"></constructor-arg>
+		<constructor-arg value="Yavatmal"></constructor-arg>
+		<constructor-arg>
+			<ref bean="address" />
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Phy</value>
+				<value>Chem</value>
+				<value>Maths</value>
+				<value>Eng</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="SSC" value="8.4"></entry>
+				<entry key="HSC" value="74%"></entry>
+				<entry key="SSC" value="8.7"></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg>
+			<value>Cricket,Swimming,Gaming</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="s2" class="demo.Student" autowire="byName">
+		<property name="name" value="Utkarsh" />
+		<property name="city" value="Indore" />
+		<property name="marks" value="74" />
+<!-- 		<property name="address" ref="a1" /> -->
+		<property name="subjects">
+			<list>
+				<value>Phy</value>
+				<value>Chem</value>
+				<value>Maths</value>
+				<value>Eng</value>
+			</list>
+		</property>
+		<property name="edu">
+			<map>
+				<entry key="SSC" value="8.4"></entry>
+				<entry key="HSC" value="74%"></entry>
+				<entry key="SSC" value="8.7"></entry>
+			</map>
+		</property>
+		<property name="hobby">
+			<value>Cricket,Swimming,Gaming</value>
+		</property>
+	</bean>
+
+
+
+</beans>

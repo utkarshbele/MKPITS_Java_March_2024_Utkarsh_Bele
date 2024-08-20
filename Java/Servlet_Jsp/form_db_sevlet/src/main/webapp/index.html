@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form action="http://localhost:8080/form_db_sevlet/Student_Servlet">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="address" required></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input type="text" name="city" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

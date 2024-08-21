@@ -1,0 +1,42 @@
+2024-08-16T12:17:39.168+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : Starting SpringBootDi1408Application using Java 21.0.2 with PID 3696 (C:\Users\Work\IdeaProjects\SpringBoot_DI_14_08\target\classes started by Work in C:\Users\Work\IdeaProjects\SpringBoot_DI_14_08)
+2024-08-16T12:17:39.175+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : No active profile set, falling back to 1 default profile: "default"
+2024-08-16T12:17:39.315+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-16T12:17:39.315+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-16T12:17:41.361+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2024-08-16T12:17:41.401+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-16T12:17:41.402+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-16T12:17:41.507+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-16T12:17:41.508+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2192 ms
+2024-08-16T12:17:41.623+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] c.e.springboot_di_14_08.DiController     : App Constructor has started!
+2024-08-16T12:17:41.623+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] c.e.springboot_di_14_08.DiController     : App Constructor has ended!
+2024-08-16T12:17:42.181+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-16T12:17:42.233+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path '/'
+2024-08-16T12:17:42.246+05:30  INFO 3696 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : Started SpringBootDi1408Application in 4.29 seconds (process running for 6.355)
+2024-08-16T12:20:22.028+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : Starting SpringBootDi1408Application using Java 21.0.2 with PID 17524 (C:\Users\Work\IdeaProjects\SpringBoot_DI_14_08\target\classes started by Work in C:\Users\Work\IdeaProjects\SpringBoot_DI_14_08)
+2024-08-16T12:20:22.032+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : No active profile set, falling back to 1 default profile: "default"
+2024-08-16T12:20:22.124+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-16T12:20:22.125+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-16T12:20:23.487+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2024-08-16T12:20:23.500+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-16T12:20:23.501+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-16T12:20:23.566+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-16T12:20:23.567+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1440 ms
+2024-08-16T12:20:23.628+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] c.e.springboot_di_14_08.DiController     : App Constructor has started!
+2024-08-16T12:20:23.629+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] c.e.springboot_di_14_08.DiController     : App Constructor has ended!
+2024-08-16T12:20:23.996+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-16T12:20:24.046+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path '/'
+2024-08-16T12:20:24.057+05:30  INFO 17524 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : Started SpringBootDi1408Application in 2.616 seconds (process running for 3.729)
+2024-08-16T12:24:22.076+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : Starting SpringBootDi1408Application using Java 21.0.2 with PID 30820 (C:\Users\Work\IdeaProjects\SpringBoot_DI_14_08\target\classes started by Work in C:\Users\Work\IdeaProjects\SpringBoot_DI_14_08)
+2024-08-16T12:24:22.089+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : No active profile set, falling back to 1 default profile: "default"
+2024-08-16T12:24:22.172+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-16T12:24:22.173+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-16T12:24:23.793+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2024-08-16T12:24:23.809+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-16T12:24:23.809+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-16T12:24:23.873+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-16T12:24:23.874+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1700 ms
+2024-08-16T12:24:23.975+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] c.e.springboot_di_14_08.DiController     : App Constructor has started!
+2024-08-16T12:24:23.975+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] c.e.springboot_di_14_08.DiController     : App Constructor has ended!
+2024-08-16T12:24:24.658+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-16T12:24:24.709+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path '/'
+2024-08-16T12:24:24.723+05:30  INFO 30820 --- [SpringBoot_DI_14_08] [restartedMain] c.e.s.SpringBootDi1408Application        : Started SpringBootDi1408Application in 3.473 seconds (process running for 4.92)

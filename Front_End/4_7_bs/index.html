@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlingGarage</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-body-tertiary bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">BlingGarage</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="#packages">Service Packages</a>
+          <a class="nav-link" href="#">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+          <img src="images/bike1.webp" class="d-block w-100 c-img" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">The Ducati Panigale</h5>
+            <p>The hottest selling bike.</p>
+            <a href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v4" type="button" class="btn btn-primary">Buy
+              Now</a>
+          </div>
+        </div>
+        <div class="carousel-item c-item">
+          <img src="images/bike2.jpg" class="d-block w-100 c-img" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">Ninja H2R</h5>
+            <p>The Fastest money can buy.</p>
+            <a href="https://kawasaki-india.com/bikes/ninja-h2r/" type="button" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+        <div class="carousel-item c-item">
+          <img src="images/bike3.webp" class="d-block w-100 c-img" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">Yamaha R1</h5>
+            <p>Its pretty fast</p>
+            <a href="https://yamahamotorsports.com/models/yzf-r1" type="button" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <section class="overview">
+      <div class="container d-flex align-content-center h-100">
+        <div class="col-lg-12">
+          <div class="row text-center fs-3">
+            <div class="col-lg-3"><i class="bi bi-award-fill"></i>Official Trusted Seller</div>
+            <div class="col-lg-3"><i class="bi bi-chat-heart-fill"></i>1000's of Cutomers</div>
+            <div class="col-lg-3"><i class="bi bi-star-fill"></i>Great Customer Reviews</div>
+            <div class="col-lg-3"><i class="bi bi-rocket-takeoff"></i>Fast and Reliable Service</div>
+          </div>
+        </div>
+    </section>
+
+    <section id="packages" class="container my-sm-3">
+      <h2 class="text-center my-5">Service Packages</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card"">
+                  <img src=" images/card1.png" class="card-img-top" alt="Silver Membership">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">We offer a 30% discount on yearly bike maintainance along with 1 free towing
+                  services.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="images/card2.png" class="card-img-top" alt="Gold Membership">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">We offer a 70% discount on yearly bike maintainance along with 2 free towing
+                  services.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="images/card3.png" class="card-img-top" alt="Platinum Membership">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">We offer yearly bike maintainance, road-side assistance, towing service along with
+                  accident protection insurance.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="https://img.freepik.com/premium-photo/ducati-panigale-v4-superleggera-nocompromise-superbike-wi-motorbike-white-background-clean_655090-680259.jpg"
+            class="img-fluid" alt="Ducati Panigale V4">
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="background-color: black;">
+          <p style="color: white;">The new Panigale V4 is a masterpiece of engineering and design. It combines the best
+            of Ducati's racing heritage with cutting-edge technology to deliver a ride that's as exhilarating as it is
+            beautiful. Experience the thrill of the open road like never before with the Panigale V4.</p>
+        </div>
+      </div>
+    </div>
+
+    <section id=""
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

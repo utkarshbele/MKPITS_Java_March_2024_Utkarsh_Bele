@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="java_script.js"></script>
+</head>
+<body>
+
+    <script>
+        var value=100; 
+        document.write("<h1 style='color:blue;'>Hello world</h1>");
+        document.write("<h1 bgcolor=red>Wow Background</h1>")
+        document.write("hi hello");
+        document.write("<br>")
+        document.write(emp.id+" "+emp.name+" "+emp.salary);
+        document.write("<br>")
+        document.write(emp1.id+" "+emp1.name+" "+emp1.salary);
+        document.write("<br>")
+
+        myBook=new book("Let us C",500)
+        document.write(myBook.title+" &nbsp Rs"+myBook.price+"<br>");
+        
+        myBook.changePrice(900);
+        document.write(myBook.title+" &nbsp Rs"+myBook.price+"<br>");
+
+        var yourBook=new book("Hello Java",1500);
+        Object.assign(myBook,yourBook);
+        document.write(yourBook.title+"@bbsp Rs"+yourBook.price+"<br>");
+
+        //js array literal
+        var studnames=["Abhay","Sanjay","Sagar"];
+        for(var i=0;i<studnames.length;i++)
+        {
+            document.write(studnames[i]+"<br>");
+        }
+
+        //js array directly
+        var cities=new Array();
+        cities[0]="Nagpur";
+        cities[1]="Yavatmal";
+        cities[2]="Amravati";
+        cities[3]="Pune";
+        for(var i=0;i<cities.length;i++)
+        {
+            document.write(cities[i]+"<br>");
+        }
+
+        //js array class constructor
+        var fruits=new Array("Apple","Pineapple","Guava","Sapota");
+        document.write(fruits);
+        document.write("<br>");
+        //array methods
+        document.write(cities.concat(fruits));
+        document.write("<br>");
+        
+        document.write(fruits.copyWithin(0,1,2))
+
+        var itr=fruits.entries();
+        for(var e of itr)
+        {
+            document.write(e+"<br>");
+        }
+
+        var marks=[50,40,45,37,20];  
+        function check(value)  
+        {  
+        return value>30;  //return false, as marks[4]=20  
+        }  
+        document.write(marks.every(check)); 
+        
+        document.write("<br>");
+        var marks1=[50,40,45,[37,20],[48,26,4884,261584,62,1,]];
+        document.write("Flat array"+marks1.flat());
+        document.write("<br>");
+
+        var arr=["AngularJS","Node.js","JQuery"];  
+        var result=arr.fill("js");  
+        document.writeln(arr);  
+
+        var arr1=Array.from("Hello my name is huhh my name is hu my is slime shady")
+        document.write(arr1);
+
+        document.writeln(arr); 
+        var marks=[50,40,45,37,20];  
+        function check(value)  
+        {  
+        return value>30;  //return false, as marks[4]=20  
+        }  
+        document.write(marks.filter(check)); 
+        document.write("<br>");
+
+        //js string literal
+        var str="This is strings literal";  
+        document.write(str);
+//string object (using new keyword)
+var stringname=new String("hello javascript string");  
+document.write(stringname); 
+
+document.write("<br>");
+document.write(str.charAt(6));
+document.write(str.charCodeAt(str.length-2));
+document.write(str.concat(stringname));
+document.write(str.indexOf('i'))
+document.write("<br>");
+document.write(str.lastIndexOf("i"));
+document.write(str.search("a"));
+document.write(str.match("is"));
+document.write("<br>");
+var str2="tpointJavahello";  
+document.write(str2.match(/Java/g));  
+document.writeln(str.replace("literal","object"));
+document.writeln(str.substr(0,12));
+
+
+
+
+
+document.write("<br>");
+ </script>
+
+    <button onclick='document.write("<h1 color=blue>Hello world</h1>")'>Hello</button>
+    <button onclick='alert("How are you?")'>Wow</button>
+
+    <button onclick='myFun()'>God</button>
+    <button onclick='table()'>table</button>
+    
+    <button onclick="pattern()">Star pattern</button>
+    <button onclick="number_pyramid()">Pyramid</button>
+    <button onclick="alert(number_square(5))">Square</button>
+
+    
+</body>
+</html>

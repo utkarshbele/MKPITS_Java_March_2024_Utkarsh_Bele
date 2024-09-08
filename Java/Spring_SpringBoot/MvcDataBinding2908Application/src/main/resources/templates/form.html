@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Utkarsh</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .option-group {
+            margin-bottom: 15px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<form th:action="@{/student/processForm}" th:object="${student}" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" th:field="${student.firstName}">
+    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" th:field="*{lastName}">
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" th:field="*{email}">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+
+    <p>Please enter your favourite country</p>
+    <select th:field="${student.country}">
+        <option th:value="Brazil">Brazil</option>
+        <option th:value="France">France</option>
+        <option th:value="Germany">Germany</option>
+        <option th:value="India">India</option>
+        <option th:value="USA">USA</option>
+    </select>
+
+    <p>Select your favourite language</p>
+    <div class="option-group">
+        <input type="radio" th:field="${student.favoriteLanguage}" th:value="HTML">HTML
+        <input type="radio" th:field="${student.favoriteLanguage}" th:value="C">C++
+        <input type="radio" th:field="${student.favoriteLanguage}" th:value="Java">Java
+        <input type="radio" th:field="${student.favoriteLanguage}" th:value="JavaScript">JavaScript
+        <input type="radio" th:field="${student.favoriteLanguage}" th:value="Python">Python
+    </div>
+
+    <p>Select your favourite operating system</p>
+    <div class="option-group">
+        <input type="checkbox" th:field="${student.operatingSystems}" th:value="Linux">Linux
+        <input type="checkbox" th:field="${student.operatingSystems}" th:value="Windows">Windows
+        <input type="checkbox" th:field="${student.operatingSystems}" th:value="MACOS">MACOS
+        <input type="checkbox" th:field="${student.operatingSystems}" th:value="Android">Android
+        <input type="checkbox" th:field="${student.operatingSystems}" th:value="IOS">IOS
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pract Object</title>
+</head>
+<body>
+    <script>
+        var pract = {
+            "USD": { USD: 1, GBP: 0.78, INR: 83.52, AUD: 1.48 },
+            "name":["Utkarsh", "Bele"],
+            "address": {
+                locality: "Bajoriya layout",
+                road: "Arni road"
+            },
+            "hobbies": ["swimming", "gaming", "sleeping", "fucking"]
+        };
+        document.write(pract.USD.INR)
+        document.write(pract.hobbies);
+        document.write("<br>")
+        document.write("<table border=1>")
+        for(let fr in pract)
+        {
+            document.write("<tr>")
+                document.write("<td>")
+            document.write(fr);
+            document.write("</td>")
+            for(let t in pract[fr])
+        {
+            document.write("<td>")
+            document.write(pract[fr][t])
+            document.write("</td>")
+        }
+        document.write("</td>")
+        }
+        document.write("</tr>")
+    </script>
+</body>
+</html>

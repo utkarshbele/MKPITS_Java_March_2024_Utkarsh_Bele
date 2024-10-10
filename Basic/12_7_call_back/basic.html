@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>Clock</head>
+    <p id="clock"></p>
+    <script>
+    // function sum(callback)
+    // {
+    //     let a=prompt("enter a number");
+    //     let b=prompt("enter another number");
+    //     let result = Number(a)+ Number(b);
+    //     callback(result);
+    // }
+
+    // function show_data(r)
+    // {
+    //     alert(r);
+    // }
+
+    document.write("Hi");
+    document.write("<br>");
+    
+    // setTimeout(() => {
+    //     document.write("Let us see what happens");
+    // }, 2000);
+    
+    // document.write("<br>");
+
+    setInterval(()=> 
+    {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        document.getElementById("clock").innerHTML=hours+":"+minutes+":"+seconds;
+    },1000);
+
+    document.write("<br>");
+
+    
+</script>
+<button onclick="sum(show_data)">Ok</button>
+
+
+</body>
+</html>

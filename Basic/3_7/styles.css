@@ -1,0 +1,62 @@
+body{
+    background-color: black;
+    
+}
+header{
+    /* background-color: rgb(90, 88, 88); */
+    text-align: center;
+    padding: 15px;
+	color: white;
+}
+.container{
+	width: 90%;
+	margin: 0 auto
+    }
+.navbar{
+    width:100%;
+	overflow: hidden;
+	height: 40px;
+	line-height: 40px;
+	/* background: #fff; */
+	/* border-bottom: 2px solid black; */
+    opacity: 1;
+       
+}
+/* .logo{
+    width: 80px;
+	float:left;
+} */
+.menu{
+    float: right;
+}
+.menu li{
+	float:left;
+	width:120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	list-style: none;
+    }
+.menu li a{
+	color: white;
+	text-decoration: none;
+	font-family: calibri;
+	text-transform: uppercase;
+	display:block;
+    }
+.menu li:hover{
+	background: grey
+    }
+.menu li a:hover{
+	color: #fff
+    }
+#myVideo {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+    top: auto;
+	width: 100%; 
+	height: 100%;
+	filter: brightness(85%);
+    z-index: -1;
+    }

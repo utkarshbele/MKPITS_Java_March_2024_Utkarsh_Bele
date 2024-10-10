@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<body style="background: linear-gradient(to right, lavender , violet, purple); text-align: center;">
+    <h1>International Currency Converter</h1>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount">
+    <br><br>
+    <label for="fromCurrency">From:</label>
+    <select id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="GBP">GBP</option>
+        <option value="INR">INR</option>
+        <option value="AUD">AUD</option>
+    </select>
+    <br><br>
+    <label for="toCurrency">To:</label>
+    <select id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="GBP">GBP</option>
+        <option value="INR">INR</option>
+        <option value="AUD">AUD</option>
+    </select>
+    <br><br>
+    <button onclick="convertCurrency()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        const exchangeRates = {
+            USD: { USD: 1, GBP: 0.78, INR: 83.52, AUD: 1.48 },
+            GBP: { USD: 1.28, GBP: 1, INR: 106.97, AUD: 1.90 },
+            INR: { USD: 0.012, GBP: 0.0093, INR: 1, AUD: 0.018 },
+            AUD: { USD: 0.67, GBP: 0.53, INR: 56.30, AUD: 1 }
+        };
+
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const fromCurrency = document.getElementById('fromCurrency').value;
+            const toCurrency = document.getElementById('toCurrency').value;
+
+            const convertedAmount = amount * exchangeRates[fromCurrency][toCurrency];
+
+            document.getElementById('result').textContent = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+        }
+    </script>
+</body>
+</html>

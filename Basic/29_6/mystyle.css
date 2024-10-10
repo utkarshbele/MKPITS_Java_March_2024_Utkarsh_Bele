@@ -1,0 +1,77 @@
+body{
+    ;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size:auto;
+}
+p{
+    font-style: normal;
+    font: 1em calibri;
+    color: white;
+    font-size: 20px;
+}
+
+ul{
+    color:brown;
+}
+.demo{
+    color: yellow;
+}
+.demo1{
+    font-size: 20px;
+}
+
+#l69{
+    color: rgb(243, 75, 9);
+    font-size: 22px;
+    text-align: right;
+    text-shadow: 3px 3px 3px;
+    text-transform: uppercase;
+    vertical-align: text-top;
+    white-space: inherit;
+    word-spacing: 15px;
+    word-wrap: break-word;
+    line-height: 30px;
+    text-decoration: underline;
+}
+
+#l9{
+    color:white;
+    list-style-type: georgian;
+    font-size: 25px;
+    list-style-image: url('/beach.jpg') none;
+    list-style-position: outside;  
+    max-width: 150px;                           /*max width */
+
+    }
+
+#l19{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-style: oblique;
+    font-stretch: condensed;
+    font-weight: 900;
+}
+
+#l29{
+    border: 5px;
+    border-style: dotted;
+    border-width: solid;
+    border-color: rgb(25, 0, 255);
+}
+
+#l39{
+     /* table tag ppt 17*/
+}
+
+#l49{
+    /*display*/  
+}
+
+#l59{
+    visibility: hidden;
+}
+
+#l79{
+
+}

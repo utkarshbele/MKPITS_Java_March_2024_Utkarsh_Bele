@@ -12,11 +12,6 @@ import java.math.BigDecimal;
 @ToString
 public class RequestDTO {
 
-    @Column(nullable = false, unique = true)
-    @Size(min = 1, max = 128, message = "username length must be between 0 to 128")
-    @NotEmpty(message = "username should not be empty")
-    private String username;
-
     @Column(nullable = false)
     @Size(min = 8, max = 128, message = "password length must be between 0 to 128")
     @NotEmpty(message = "password should not be empty")

@@ -10,9 +10,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import java.security.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -21,13 +19,13 @@ import java.util.List;
 @Setter
 @ToString
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
+@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String username;
+    private String email;
 
     private String password;
 

@@ -7,7 +7,7 @@ import com.example.bankingapplication.Repo.RoleRepo;
 import com.example.bankingapplication.Repo.UsersDetailsRepo;
 import com.example.bankingapplication.Repo.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 import com.example.bankingapplication.DTO.RequestDTO;
 
@@ -18,14 +18,14 @@ public class UserServiceImplementation implements UserService {
     private UsersRepo userRepository;
     private UsersDetailsRepo userDetailsRepository;
     private RoleRepo roleRepository;
-    private PasswordEncoder passwordEncoder;
+    //private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserServiceImplementation(UsersRepo userRepository, UsersDetailsRepo userDetailsRepository, RoleRepo roleRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceImplementation(UsersRepo userRepository, UsersDetailsRepo userDetailsRepository, RoleRepo roleRepository) {
         this.userRepository = userRepository;
         this.userDetailsRepository = userDetailsRepository;
         this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
+        //this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -35,14 +35,13 @@ public class UserServiceImplementation implements UserService {
         userDetails.setFirstName(requestDTO.getFirstName());
         userDetails.setLastName(requestDTO.getLastName());
         userDetails.setAge(requestDTO.getAge());
-        userDetails.setEmail(requestDTO.getEmail());
         userDetails.setPhoneNumber(requestDTO.getPhoneNumber());
         userDetails.setAddress(requestDTO.getAddress());
         userDetails.setGender(requestDTO.getGender());
         // Create user
         Users user = new Users();
-        user.setUsername(requestDTO.getUsername());
-        user.setPassword(passwordEncoder.encode(requestDTO.getPassword()));
+        user.setEmail(requestDTO.getEmail());
+        user.setPassword(requestDTO.getPassword());
         user.setUsers_details(userDetails);
         user.setEnable(1);
 
@@ -51,7 +50,6 @@ public class UserServiceImplementation implements UserService {
         user.setRoles(new ArrayList<>());
         user.getRoles().add(defaultRole);
 
-        // Save user
         return userRepository.save(user);
     }
 }

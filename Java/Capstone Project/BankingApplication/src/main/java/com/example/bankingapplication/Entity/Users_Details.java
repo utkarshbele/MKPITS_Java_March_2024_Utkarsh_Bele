@@ -29,8 +29,6 @@ public class Users_Details {
 
     private String dob;
 
-    private String email;
-
     private String address;
 
     private String phoneNumber;

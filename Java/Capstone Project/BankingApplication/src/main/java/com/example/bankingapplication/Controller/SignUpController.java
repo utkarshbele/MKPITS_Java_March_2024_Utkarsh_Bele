@@ -7,21 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.validation.Valid;
 
 @Controller
 public class SignUpController {
-
+    @Autowired
     private UserService userService;
 
     // Display the signup form
     @GetMapping("/signup")
     public String showSignupForm(Model model) {
         model.addAttribute("requestDTO", new RequestDTO());
-        return "signup";  // Return Thymeleaf signup template
+        return "signup";
     }
 
     // Handle form submission
@@ -29,7 +28,7 @@ public class SignUpController {
     public String signup(@Valid @ModelAttribute("requestDTO") RequestDTO requestDTO, BindingResult result, Model model) {
         // Validate form inputs
         if (result.hasErrors()) {
-            return "signup";  // If validation fails, show the form again with error messages
+            return "signup";
         }
 
         try {

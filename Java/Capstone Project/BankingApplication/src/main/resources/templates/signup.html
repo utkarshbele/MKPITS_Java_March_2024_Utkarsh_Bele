@@ -9,18 +9,6 @@
 
 <form th:action="@{/signup}" th:object="${requestDTO}" method="post">
     <div>
-        <label for="username">Username</label>
-        <input type="text" id="username" th:field="*{username}" placeholder="Enter username" />
-        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>
-    </div>
-
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" th:field="*{password}" placeholder="Enter password" />
-        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
-    </div>
-
-    <div>
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" th:field="*{firstName}" placeholder="Enter first name" />
         <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</p>
@@ -63,6 +51,12 @@
             <option value="Female">Female</option>
         </select>
         <p th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">Gender Error</p>
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" th:field="*{password}" placeholder="Enter password" />
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
     </div>
 
     <div>

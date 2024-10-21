@@ -23,15 +23,15 @@ public class UserServiceImplementation implements UserService {
     private final UserRepo userRepository;
     private final UserDetailsRepo userDetailsRepository;
     private final RoleRepo roleRepository;
-    private final PasswordEncoder passwordEncoder;
+    //private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public UserServiceImplementation(UserRepo userRepository, UserDetailsRepo userDetailsRepository,
-                                     RoleRepo roleRepository, PasswordEncoder passwordEncoder) {
+                                     RoleRepo roleRepository ) {
         this.userRepository = userRepository;
         this.userDetailsRepository = userDetailsRepository;
         this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
+        //this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -57,9 +57,9 @@ public class UserServiceImplementation implements UserService {
         // Create user
         Users user = new Users();
         user.setEmail(requestDTO.getEmail());
-        user.setPassword(passwordEncoder.encode(requestDTO.getPassword())); // Ensure password encoding
+        user.setPassword("{noop}"+requestDTO.getPassword()); // Ensure password encoding
         user.setUserDetails(userDetails);
-        user.setEnable(true); // Set the user to enabled
+        user.setEnabled(true); // Set the user to enabled
 
         // Assign default role as "User"
         Role defaultRole = roleRepository.findRoleByRoleName("ROLE_USER");

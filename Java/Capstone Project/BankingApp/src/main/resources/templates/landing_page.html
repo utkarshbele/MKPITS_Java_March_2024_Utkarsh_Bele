@@ -3,38 +3,302 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Our Banking App</title>
+  <title>Welcome to USBank</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
+      background-color: #F5F7FA;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation Bar Styling */
+    nav {
+      background-color: #1F3A93;
+    }
+
+    nav .navbar-brand img {
+      height: 40px;
+    }
+
+    nav a {
+      color: #F4D03F;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: white;
+      background-color: #F4D03F;
+      border-radius: 0.3em;
+    }
+
+    /* Hero Section Styling */
+    .hero-section {
       background-color: #1F3A93;
       color: white;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
+      padding: 4em 2em;
+      margin-top: 2em;
+    }
+
+    .hero-section h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    .hero-section p {
+      font-size: 1.2em;
+      margin-bottom: 1.5em;
+    }
+
+    .hero-section .btn {
+      padding: 0.75em 2em;
+      margin: 0.5em;
+    }
+
+    /* Section Title Styling */
+    .section-title {
+      margin-top: 2em;
+      margin-bottom: 1.5em;
+      color: #1F3A93;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Card Styling */
+    .card {
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 1em;
+    }
+
+    .card-body {
       text-align: center;
     }
-    .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2em;
-      border-radius: 1em;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    .card-title {
+      color: #1F3A93;
+      font-weight: bold;
     }
-    .btn {
-      margin: 1em 0;
-      border-radius: 2em;
-      padding: 0.5em 2em;
+
+    .card-text {
+      color: #333;
+    }
+
+    /* Section Background Colors */
+    .about-us {
+      background-color: #E8F8F5;
+    }
+
+    .account-services {
+      background-color: #FBF9F2;
+    }
+
+    .loans {
+      background-color: #FEF9E7;
+    }
+
+    .customer-service {
+      background-color: #F2F3F4;
+    }
+
+    /* Spacing and Layout Fixes */
+    .row {
+      margin-bottom: 2em;
+    }
+
+    .col-md-4, .col-md-6 {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2em;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #1F3A93;
+      color: white;
+      padding: 1.5em 0;
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #F4D03F;
     }
   </style>
 </head>
 <body>
-<div class="container">
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://via.placeholder.com/100x40?text=USBank" alt="USBank Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#register">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#account-services">Account Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#loans">Loans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#customer-service">Customer Service</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
   <h1>Welcome to USBank</h1>
-  <p>Please choose an option to proceed:</p>
-  <a th:href="@{/signup/form}" class="btn btn-primary">Sign Up</a>
-  <a th:href="@{/login}" class="btn btn-secondary">Login</a>
-</div>
+  <p>Your trusted partner in all financial services.</p>
+  <a href="#" class="btn btn-light" id="register">Sign Up</a>
+  <a href="#" class="btn btn-warning" id="login">Login</a>
+</section>
+
+<!-- About Us Section -->
+<section class="about-us py-5">
+  <div class="container">
+    <h2 class="section-title" id="about-us">About Us</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Who We Are</h5>
+            <p class="card-text">USBank has been a leader in the financial industry for over a century, providing excellent services to individuals and businesses.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Our Mission</h5>
+            <p class="card-text">Our mission is to deliver secure, innovative, and client-centered financial solutions to help you achieve your goals.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Why Choose Us</h5>
+            <p class="card-text">With a focus on customer satisfaction, USBank offers cutting-edge technology and personalized service to meet all your banking needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Account Services Section -->
+<section class="account-services py-5">
+  <div class="container">
+    <h2 class="section-title" id="account-services">Account Services</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Fund Transfer</h5>
+            <p class="card-text">Easily transfer funds between your accounts or to other USBank customers with our secure online platform.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Cash Withdrawal</h5>
+            <p class="card-text">Withdraw cash from your account at any USBank ATM or bank branch with ease and convenience.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Account Statement</h5>
+            <p class="card-text">Access your account statements online anytime to stay informed about your transactions and balance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Loans Section -->
+<section class="loans py-5">
+  <div class="container">
+    <h2 class="section-title" id="loans">Loans</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Personal Loans</h5>
+            <p class="card-text">Get a personal loan with competitive rates and flexible repayment options for your next big purchase or emergency expenses.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Home Loans</h5>
+            <p class="card-text">Looking to buy a new home? Our home loan solutions provide affordable rates and customized loan options to make your dream home a reality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Service Section -->
+<section class="customer-service py-5">
+  <div class="container">
+    <h2 class="section-title" id="customer-service">Customer Service</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Support</h5>
+            <p class="card-text">Our customer support team is here to assist you 24/7. Contact us anytime for inquiries or assistance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">FAQs</h5>
+            <p class="card-text">Visit our FAQ section for quick answers to common questions about our services and account management.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 USBank. All rights reserved.</p>
+  <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

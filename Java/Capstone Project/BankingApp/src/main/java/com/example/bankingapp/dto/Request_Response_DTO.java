@@ -55,5 +55,5 @@ public class Request_Response_DTO {
     private String address;
 
     private String role;
-    private boolean enable;
+    private boolean enabled;
 }

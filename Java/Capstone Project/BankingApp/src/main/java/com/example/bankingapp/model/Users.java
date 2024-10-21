@@ -29,7 +29,7 @@ public class Users {
     @OneToOne
     private UserDetails userDetails;
 
-    private boolean enable;
+    private boolean enabled;
 
     @ManyToMany
     @JoinTable(

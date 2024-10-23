@@ -42,9 +42,10 @@ public class SecurityConfig {
                         .anyRequest().authenticated() // Require authentication for all other requests
                 )
                 .formLogin(form -> form
-                        .loginPage("/login")
+                        .loginPage("/auth/login")
                         .loginProcessingUrl("/authenticateTheUser")
-                        .defaultSuccessUrl("/home_page", true) // Redirect after successful login
+                        .defaultSuccessUrl("/auth/home_page", true) // Redirect after
+                        // successful login
                         .permitAll() // Allow all users to access the login page
                 )
                 .logout(logout -> logout.permitAll()) // Allow all users to log out

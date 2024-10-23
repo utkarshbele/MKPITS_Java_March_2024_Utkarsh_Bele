@@ -4,6 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -54,6 +57,24 @@ public class Request_Response_DTO {
     @NotEmpty(message = "Address should not be empty")
     private String address;
 
+    // Date of Birth validation: must be in the past
+    @Column(nullable = false)
+    @Past(message = "Date of birth must be in the past")
+    @NotNull(message = "Date of birth is required")
+    private LocalDate dob;
+
     private String role;
     private boolean enabled;
+
+//    public int getAge() {
+//        // Calculate age based on the current date
+//        return Period.between(this.dob, LocalDate.now()).getYears();
+//    }
+//
+//    // Optionally, enforce age range (e.g., 18 to 120)
+//    @AssertTrue(message = "Age must be between 18 and 120 years old")
+//    public boolean isValidAge() {
+//        int age = getAge();
+//        return age >= 18 && age <= 120;
+//    }
 }

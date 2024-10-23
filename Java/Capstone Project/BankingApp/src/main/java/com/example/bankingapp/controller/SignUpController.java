@@ -1,16 +1,19 @@
 package com.example.bankingapp.controller;
 
 import com.example.bankingapp.dto.Request_Response_DTO;
+import com.example.bankingapp.editors.date_To_LocalDate_Editor;
 import com.example.bankingapp.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 @Controller
 @RequestMapping("/signup")
@@ -43,12 +46,22 @@ public class SignUpController {
         try {
             // Register the user through the service
             userService.registerUser(requestDTO);
-            return "redirect:/login";  // Redirect to login page on successful
+            return "redirect:/signin/login";  // Redirect to login page on successful
             // signup
         } catch (Exception e) {
             // Handle cases like username/email already existing
             model.addAttribute("error", "An error occurred during signup: " + e.getMessage());
             return "signup";  // Return back to signup page with error message
         }
+    }
+
+    @InitBinder
+    public void convertStudentDOB_initBinder(WebDataBinder binder) {
+        System.out.println(" signup convert date_initBinder()");
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+        CustomDateEditor cde = new  CustomDateEditor(sdf, false);
+
+        binder.registerCustomEditor(java.util.Date.class, cde);
+        binder.registerCustomEditor(LocalDate.class, new date_To_LocalDate_Editor() );
     }
 }

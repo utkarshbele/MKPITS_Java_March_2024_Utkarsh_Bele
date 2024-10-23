@@ -53,6 +53,7 @@ public class UserServiceImplementation implements UserService {
         userDetails.setPhoneNumber(requestDTO.getPhoneNumber());
         userDetails.setAddress(requestDTO.getAddress());
         userDetails.setGender(requestDTO.getGender());
+        userDetails.setDob(requestDTO.getDob());
 
         // Create user
         Users user = new Users();

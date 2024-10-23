@@ -1,10 +1,14 @@
 package com.example.bankingapp.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.AssertTrue;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @NoArgsConstructor
@@ -22,7 +26,7 @@ public class UserDetails {
 
     private int age;
 
-    private String dob;
+    private LocalDate dob;
 
     private String address;
 
@@ -32,4 +36,9 @@ public class UserDetails {
 
     @OneToOne(mappedBy = "userDetails",cascade = CascadeType.ALL)
     private Users users;
+
+    public void setUsers(Users users) {
+        this.users = users;
+        users.setUserDetails(this);
+    }
 }

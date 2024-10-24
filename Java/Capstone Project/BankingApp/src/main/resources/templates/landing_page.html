@@ -1,310 +1,113 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to USBank</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #F5F7FA;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Navigation Bar Styling */
-    nav {
-      background-color: #1F3A93;
-    }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-    nav .navbar-brand img {
-      height: 40px;
-    }
+        h1 {
+            margin: 0;
+            padding: 20px;
+        }
 
-    nav a {
-      color: #F4D03F;
-      font-weight: bold;
-    }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
 
-    nav a:hover {
-      color: white;
-      background-color: #F4D03F;
-      border-radius: 0.3em;
-    }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
-    /* Hero Section Styling */
-    .hero-section {
-      background-color: #1F3A93;
-      color: white;
-      text-align: center;
-      padding: 4em 2em;
-      margin-top: 2em;
-    }
+        .btn:hover {
+            background-color: #0056b3;
+        }
 
-    .hero-section h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
+        /* Different background colors for different roles */
+        .user-role {
+            background-color: #e2f0d9;
+        }
 
-    .hero-section p {
-      font-size: 1.2em;
-      margin-bottom: 1.5em;
-    }
+        .admin-role {
+            background-color: #f5c6cb;
+        }
 
-    .hero-section .btn {
-      padding: 0.75em 2em;
-      margin: 0.5em;
-    }
-
-    /* Section Title Styling */
-    .section-title {
-      margin-top: 2em;
-      margin-bottom: 1.5em;
-      color: #1F3A93;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    /* Card Styling */
-    .card {
-      border: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 1em;
-    }
-
-    .card-body {
-      text-align: center;
-    }
-
-    .card-title {
-      color: #1F3A93;
-      font-weight: bold;
-    }
-
-    .card-text {
-      color: #333;
-    }
-
-    /* Section Background Colors */
-    .about-us {
-      background-color: #E8F8F5;
-    }
-
-    .account-services {
-      background-color: #FBF9F2;
-    }
-
-    .loans {
-      background-color: #FEF9E7;
-    }
-
-    .customer-service {
-      background-color: #F2F3F4;
-    }
-
-    /* Spacing and Layout Fixes */
-    .row {
-      margin-bottom: 2em;
-    }
-
-    .col-md-4, .col-md-6 {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2em;
-    }
-
-    /* Footer Styling */
-    footer {
-      background-color: #1F3A93;
-      color: white;
-      padding: 1.5em 0;
-      text-align: center;
-      margin-top: 2em;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: #F4D03F;
-    }
-  </style>
+        .manager-role {
+            background-color: #ffeeba;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="https://via.placeholder.com/100x40?text=USBank" alt="USBank Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/auth/login}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/signup/form}">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/about-us}">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/account-services}">Account Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/loans}">Loans</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/customer-service}">Customer Service</a>
-        </li>
-      </ul>
+<!-- Header -->
+<header>
+    <h1>Welcome to USBank</h1>
+</header>
+
+<div class="container">
+    <h2>Landing Page</h2>
+
+    <!-- Display content based on the role of the user -->
+
+    <!-- For User Role -->
+    <div th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
+        <div class="user-role">
+            <h3>Hello, User!</h3>
+            <p>Welcome to your dashboard. You can view your account details and make transactions here.</p>
+            <p>Access your account details, transactions, and transfer funds.</p>
+            <a th:href="@{/user/profile}" class="btn">View Profile</a>
+            <a th:href="@{/user/transactions}" class="btn">View Transactions</a>
+            <a th:href="@{/user/fund_transfer}" class="btn">Transfer Funds</a>
+            <a th:href="@{/user/accounts}" class="btn">Create Accounts</a>
+            <a th:href="@{/user/fund_transaction}" class="btn">Deposit/Withdraw Funds</a>
+        </div>
     </div>
-  </div>
-</nav>
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <h1>Welcome to USBank</h1>
-  <p>Your trusted partner in all financial services.</p>
-  <a th:href="@{/signup/form}" class="btn btn-light">Sign Up</a>
-  <a th:href="@{/auth/login}" class="btn btn-warning">Login</a>
-</section>
+    <!-- For Admin Role -->
+    <div th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+        <div class="admin-role">
+            <h3>Hello, Admin!</h3>
+            <p>Manage users, roles, and view system reports from here.</p>
 
-<!-- About Us Section -->
-<section class="about-us py-5">
-  <div class="container">
-    <h2 class="section-title" id="about-us">About Us</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Who We Are</h5>
-            <p class="card-text">USBank has been a leader in the financial industry for over a century, providing excellent services to individuals and businesses.</p>
-          </div>
+            <!-- Button to manage users (View users list) -->
+            <a th:href="@{/admin/users}" class="btn">Manage Users</a>
+
+            <!-- Button for viewing system reports -->
+            <a th:href="@{/admin/reports}" class="btn">View Reports</a>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Our Mission</h5>
-            <p class="card-text">Our mission is to deliver secure, innovative, and client-centered financial solutions to help you achieve your goals.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Why Choose Us</h5>
-            <p class="card-text">With a focus on customer satisfaction, USBank offers cutting-edge technology and personalized service to meet all your banking needs.</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
 
-<!-- Account Services Section -->
-<section class="account-services py-5">
-  <div class="container">
-    <h2 class="section-title" id="account-services">Account Services</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Fund Transfer</h5>
-            <p class="card-text">Easily transfer funds between your accounts or to other USBank customers with our secure online platform.</p>
-          </div>
+
+    <!-- For Branch Manager Role -->
+    <div th:if="${#authorization.expression('hasRole(''ROLE_BRANCH_MANAGER'')')}">
+        <div class="manager-role">
+            <h3>Hello, Branch Manager!</h3>
+            <p>Manage branch accounts and review customer requests from your dashboard.</p>
+            <a href="/manager/accounts" class="btn">Manage Accounts</a>
+            <a href="/manager/customer-requests" class="btn">View Customer Requests</a>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Cash Withdrawal</h5>
-            <p class="card-text">Withdraw cash from your account at any USBank ATM or bank branch with ease and convenience.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Account Statement</h5>
-            <p class="card-text">Access your account statements online anytime to stay informed about your transactions and balance.</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+</div>
 
-<!-- Loans Section -->
-<section class="loans py-5">
-  <div class="container">
-    <h2 class="section-title" id="loans">Loans</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Personal Loans</h5>
-            <p class="card-text">Get a personal loan with competitive rates and flexible repayment options for your next big purchase or emergency expenses.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Home Loans</h5>
-            <p class="card-text">Looking to buy a new home? Our home loan solutions provide affordable rates and customized loan options to make your dream home a reality.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Customer Service Section -->
-<section class="customer-service py-5">
-  <div class="container">
-    <h2 class="section-title" id="customer-service">Customer Service</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Contact Us</h5>
-            <p class="card-text">Our customer service representatives are available 24/7 to assist you with any inquiries or issues.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">FAQs</h5>
-            <p class="card-text">Visit our FAQ section to find answers to common questions about our services and policies.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>&copy; 2024 USBank. All rights reserved.</p>
-    <p>Follow us on
-      <a href="#">Twitter</a>,
-      <a href="#">Facebook</a>,
-      <a href="#">Instagram</a>
-    </p>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -13,6 +13,8 @@ import java.time.Period;
 @NoArgsConstructor
 @ToString
 public class Request_Response_DTO {
+    private int id;
+
     @Column(nullable = false)
     @Size(min = 8, max = 128, message = "password length must be between 8 to 128")
     @NotEmpty(message = "Password should not be empty")
@@ -63,8 +65,13 @@ public class Request_Response_DTO {
     @NotNull(message = "Date of birth is required")
     private LocalDate dob;
 
-    private String role;
+    private String roles;
     private boolean enabled;
+
+    private Integer countryId;
+    private Integer stateId;
+    private Integer districtId;
+    private Integer cityId;
 
 //    public int getAge() {
 //        // Calculate age based on the current date

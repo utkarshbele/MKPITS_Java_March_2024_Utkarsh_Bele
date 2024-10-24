@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Access Denied</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #dc3545;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        a.btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        a.btn:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h1>Access Denied</h1>
+    <p>Sorry, you do not have permission to access this page.</p>
 
+    <a th:href="@{/}" class="btn btn-primary">Return to Home</a>
+    <a th:href="@{/auth/login}" class="btn btn-secondary">Login</a>
+</div>
 </body>
 </html>

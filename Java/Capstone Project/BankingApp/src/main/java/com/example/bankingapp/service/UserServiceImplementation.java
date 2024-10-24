@@ -1,9 +1,7 @@
 package com.example.bankingapp.service;
 
 import com.example.bankingapp.dto.Request_Response_DTO;
-import com.example.bankingapp.model.Role;
-import com.example.bankingapp.model.UserDetails;
-import com.example.bankingapp.model.Users;
+import com.example.bankingapp.model.*;
 import com.example.bankingapp.repo.RoleRepo;
 import com.example.bankingapp.repo.UserDetailsRepo;
 import com.example.bankingapp.repo.UserRepo;
@@ -45,6 +43,18 @@ public class UserServiceImplementation implements UserService {
             throw new RuntimeException("User with this email already exists");
         }
 
+        // Fetch country, state, district, and city from their respective repositories
+        Country country = entityManager.find(Country.class, requestDTO.getCountryId());
+        State state = entityManager.find(State.class, requestDTO.getStateId());
+        District district = entityManager.find(District.class, requestDTO.getDistrictId());
+        City city = entityManager.find(City.class, requestDTO.getCityId());
+
+        // Check if the values are valid
+        if (country == null || state == null || district == null || city == null) {
+            throw new RuntimeException("Invalid country, state, district, or city");
+        }
+
+
         // Create user details
         UserDetails userDetails = new UserDetails();
         userDetails.setFirstName(requestDTO.getFirstName());
@@ -54,6 +64,19 @@ public class UserServiceImplementation implements UserService {
         userDetails.setAddress(requestDTO.getAddress());
         userDetails.setGender(requestDTO.getGender());
         userDetails.setDob(requestDTO.getDob());
+
+        // Set the country, state, district, and city
+        City city1= new City();
+        city1.setCityName();
+        District district1 = new District();
+        district1.setDistrictName("");
+        State state1 = new State();
+        state1.setStateName("");
+        Country country1 = new Country();
+        country1.setCountryName("");
+
+        userDetails.setCity(city1);
+
 
         // Create user
         Users user = new Users();

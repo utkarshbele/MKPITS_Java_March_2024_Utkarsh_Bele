@@ -1,0 +1,14 @@
+package com.example.bankingapp.service;
+
+import com.example.bankingapp.model.Users;
+
+import java.util.List;
+
+public interface AdminService {
+    List<Users> findAllUsers();
+    Users findUserById(int id);
+    void updateUser(Users user);
+    void deleteUser(int id);
+    void toggleUserStatus(int id);
+    void assignRole(int userId, int roleId);
+}

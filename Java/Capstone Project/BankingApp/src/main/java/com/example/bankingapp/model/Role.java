@@ -22,4 +22,17 @@ public class Role {
 
     @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
     private List<Users> users;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Role)) return false;
+        Role role = (Role) o;
+        return id == role.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
+    }
 }

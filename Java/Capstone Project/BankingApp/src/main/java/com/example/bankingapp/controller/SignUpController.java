@@ -2,6 +2,7 @@ package com.example.bankingapp.controller;
 
 import com.example.bankingapp.dto.Request_Response_DTO;
 import com.example.bankingapp.editors.date_To_LocalDate_Editor;
+import com.example.bankingapp.service.CountryService;
 import com.example.bankingapp.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,13 @@ import java.time.LocalDate;
 @RequestMapping("/signup")
 public class SignUpController {
     private UserService userService;
+    private final CountryService countryService;
 
     @Autowired
-    public SignUpController(UserService userService) {
+    public SignUpController(UserService userService, CountryService CountryService) {
         super();
         this.userService = userService;
+        this.countryService = CountryService;
     }
 
     // Display the signup form
@@ -31,6 +34,7 @@ public class SignUpController {
     public String showSignupForm(Model model) {
         Request_Response_DTO responseDto = new Request_Response_DTO();
         model.addAttribute("requestDTO", responseDto);
+        model.addAttribute("countries", countryService.getAllCountries());
         return "signup";
     }
 
@@ -46,7 +50,7 @@ public class SignUpController {
         try {
             // Register the user through the service
             userService.registerUser(requestDTO);
-            return "redirect:/signin/login";  // Redirect to login page on successful
+            return "redirect:/auth/login";  // Redirect to login page on successful
             // signup
         } catch (Exception e) {
             // Handle cases like username/email already existing

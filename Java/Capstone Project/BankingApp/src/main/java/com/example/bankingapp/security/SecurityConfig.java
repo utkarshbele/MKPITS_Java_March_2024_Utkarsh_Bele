@@ -38,13 +38,14 @@ public class SecurityConfig {
     public SecurityFilterChain configureFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(configurer -> configurer
-                        .requestMatchers("/signup/**", "/", "/login", "/css/**", "/js/**").permitAll() // Allow access to these paths
+                        .requestMatchers("/signup/**","/api/**", "/", "/login", "/css/**", "/js/**").permitAll() // Allow access to these paths
+                        .requestMatchers("/admin/**").hasRole("ADMIN") // Only allow users with ADMIN role to access admin pages
                         .anyRequest().authenticated() // Require authentication for all other requests
                 )
                 .formLogin(form -> form
                         .loginPage("/auth/login")
                         .loginProcessingUrl("/authenticateTheUser")
-                        .defaultSuccessUrl("/auth/home_page", true) // Redirect after
+                        .defaultSuccessUrl("/auth/landing_page", true) // Redirect after
                         // successful login
                         .permitAll() // Allow all users to access the login page
                 )

@@ -41,4 +41,20 @@ public class UserDetails {
         this.users = users;
         users.setUserDetails(this);
     }
+
+    @ManyToOne
+    @JoinColumn(name = "city_id", nullable = false)
+    private City city;
+
+//    @ManyToOne
+//    @JoinColumn(name = "country_id")
+//    private Country country;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "state_id")
+//    private State state;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "district_id")
+//    private District district;
 }

@@ -15,9 +15,21 @@ public class LoginController {
         return "login";
     }
 
-    @GetMapping("/home_page")
+    @GetMapping("/landing_page")
     public String showHome(Model model) {
-        return "home_page";
+        return "landing_page";
     }
 
+//    @GetMapping("/landing_page")
+//    public String showLandingPage(Model model, Authentication authentication) {
+//        // Based on the role, the corresponding section will be displayed
+//        if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+//            model.addAttribute("role", "ADMIN");
+//        } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_BRANCH_MANAGER"))) {
+//            model.addAttribute("role", "BRANCH_MANAGER");
+//        } else {
+//            model.addAttribute("role", "USER");
+//        }
+//        return "auth/landing_page";
+//    }
 }

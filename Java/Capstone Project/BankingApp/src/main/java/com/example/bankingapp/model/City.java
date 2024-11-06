@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,6 +26,11 @@ public class City {
     @JoinColumn(name = "district_id", nullable = false)
     private District district;
 
-    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL)
-    private List<UserDetails> userDetailsList; // List of UserDetails>
+    @OneToMany(mappedBy = "city", cascade = CascadeType.PERSIST)
+    private List<UserDetails> userDetailsList = new ArrayList<>(); // List of UserDetails
+
+    public void addUserDetail(UserDetails userDetails) {
+        userDetailsList.add(userDetails);
+        userDetails.setCity(this); // Set bi-directional relationship
+    }
 }

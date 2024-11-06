@@ -111,7 +111,7 @@
             <label for="country" class="form-label">Country</label>
             <select id="country" th:field="*{countryId}" class="form-select" required>
                 <option value="" disabled selected>Select country</option>
-                <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.countryName}"></option>
+                <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.name}"></option>
             </select>
         </div>
 

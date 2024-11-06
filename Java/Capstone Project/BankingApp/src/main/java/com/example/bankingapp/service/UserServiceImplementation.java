@@ -49,11 +49,10 @@ public class UserServiceImplementation implements UserService {
         District district = entityManager.find(District.class, requestDTO.getDistrictId());
         City city = entityManager.find(City.class, requestDTO.getCityId());
 
-        // Check if the values are valid
-        if (country == null || state == null || district == null || city == null) {
-            throw new RuntimeException("Invalid country, state, district, or city");
+        // check that all location entities are retrieved successfully
+        if (city == null || city.getDistrict() == null || city.getDistrict().getState() == null || city.getDistrict().getState().getCountry() == null) {
+            throw new RuntimeException("Invalid city, district, state, or country");
         }
-
 
         // Create user details
         UserDetails userDetails = new UserDetails();
@@ -64,18 +63,8 @@ public class UserServiceImplementation implements UserService {
         userDetails.setAddress(requestDTO.getAddress());
         userDetails.setGender(requestDTO.getGender());
         userDetails.setDob(requestDTO.getDob());
-
-        // Set the country, state, district, and city
-        City city1= new City();
-        city1.setCityName();
-        District district1 = new District();
-        district1.setDistrictName("");
-        State state1 = new State();
-        state1.setStateName("");
-        Country country1 = new Country();
-        country1.setCountryName("");
-
-        userDetails.setCity(city1);
+        // Set the city in UserDetails
+        userDetails.setCity(city);
 
 
         // Create user

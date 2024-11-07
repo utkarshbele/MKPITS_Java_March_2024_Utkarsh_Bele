@@ -2,6 +2,7 @@ package com.example.bankingapp.service;
 
 import com.example.bankingapp.dto.Request_Response_DTO;
 import com.example.bankingapp.model.*;
+import com.example.bankingapp.repo.CityRepo;
 import com.example.bankingapp.repo.RoleRepo;
 import com.example.bankingapp.repo.UserDetailsRepo;
 import com.example.bankingapp.repo.UserRepo;
@@ -22,14 +23,16 @@ public class UserServiceImplementation implements UserService {
     private final UserDetailsRepo userDetailsRepository;
     private final RoleRepo roleRepository;
     //private final PasswordEncoder passwordEncoder;
+    private CityRepo cityRepo;
 
     @Autowired
     public UserServiceImplementation(UserRepo userRepository, UserDetailsRepo userDetailsRepository,
-                                     RoleRepo roleRepository ) {
+                                     RoleRepo roleRepository, CityRepo cityRepo ) {
         this.userRepository = userRepository;
         this.userDetailsRepository = userDetailsRepository;
         this.roleRepository = roleRepository;
         //this.passwordEncoder = passwordEncoder;
+        this.cityRepo=cityRepo;
     }
 
     @Override
@@ -38,16 +41,22 @@ public class UserServiceImplementation implements UserService {
         System.out.println("Registering user: " + requestDTO.getEmail());
 
         // Check if user with the same email already exists
-        if (userRepository.existsByEmail(requestDTO.getEmail())) {
-            System.out.println("User already exists with email: " + requestDTO.getEmail());
-            throw new RuntimeException("User with this email already exists");
+        try {
+            if (userRepository.existsByEmail(requestDTO.getEmail())) {
+                System.out.println("User already exists with email: " + requestDTO.getEmail());
+                throw new RuntimeException("User with this email already exists");
+            }
+        } catch (Exception e) {
+            System.out.println("Error during email existence check: " + e.getMessage());
+            e.printStackTrace(); // Prints the stack trace to help identify the issue
+            throw e;
         }
 
-        // Fetch country, state, district, and city from their respective repositories
-        Country country = entityManager.find(Country.class, requestDTO.getCountryId());
-        State state = entityManager.find(State.class, requestDTO.getStateId());
-        District district = entityManager.find(District.class, requestDTO.getDistrictId());
-        City city = entityManager.find(City.class, requestDTO.getCityId());
+//      Fetch city from its respective repositories
+        Integer cityId=requestDTO.getCityId();
+        System.out.println("City Id = "+cityId);
+        City city=cityRepo.findById(cityId).get();
+        System.out.println(city);
 
         // check that all location entities are retrieved successfully
         if (city == null || city.getDistrict() == null || city.getDistrict().getState() == null || city.getDistrict().getState().getCountry() == null) {
@@ -65,7 +74,7 @@ public class UserServiceImplementation implements UserService {
         userDetails.setDob(requestDTO.getDob());
         // Set the city in UserDetails
         userDetails.setCity(city);
-
+        System.out.println(userDetails);
 
         // Create user
         Users user = new Users();

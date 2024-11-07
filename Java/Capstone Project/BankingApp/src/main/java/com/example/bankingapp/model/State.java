@@ -25,12 +25,5 @@ public class State {
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
-    @OneToMany(mappedBy = "state", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<District> districts = new ArrayList<>();
-
-    public void addDistrict(District district) {
-        districts.add(district);
-        district.setState(this); // Set bi-directional relationship
-    }
 
 }

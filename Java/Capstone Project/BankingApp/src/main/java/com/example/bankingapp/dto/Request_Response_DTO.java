@@ -68,10 +68,10 @@ public class Request_Response_DTO {
     private String roles;
     private boolean enabled;
 
-    private Integer countryId;
-    private Integer stateId;
-    private Integer districtId;
-    private Integer cityId;
+    private int countryId;
+    private int stateId;
+    private int districtId;
+    private int cityId;
 
 //    public int getAge() {
 //        // Calculate age based on the current date

@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class CityServiceImpl implements CityService {
 
+    @Autowired
     private CityRepo cityRepo;
     @Override
     public List<City> getCitiesByDistrictId(int districtId) {

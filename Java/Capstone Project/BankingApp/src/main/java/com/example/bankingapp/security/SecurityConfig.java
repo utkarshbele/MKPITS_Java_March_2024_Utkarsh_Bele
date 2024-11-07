@@ -38,7 +38,10 @@ public class SecurityConfig {
     public SecurityFilterChain configureFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(configurer -> configurer
-                        .requestMatchers("/signup/**","/api/**", "/", "/login", "/css/**", "/js/**").permitAll() // Allow access to these paths
+                        .requestMatchers("/signup/**","/api/countries","/api/states/**","/api/districts/**","/api/cities/**", "/",
+                                "/login",
+                                "/css/**",
+                                "/js/**").permitAll() // Allow access to these paths
                         .requestMatchers("/admin/**").hasRole("ADMIN") // Only allow users with ADMIN role to access admin pages
                         .anyRequest().authenticated() // Require authentication for all other requests
                 )

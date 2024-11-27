@@ -40,6 +40,12 @@ public class Users {
     )
     private List<Role> roles;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Account> accounts;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private BranchManager branchManager;
+
     public Users(String email, String password) {
         this.email = email;
         this.password = password;

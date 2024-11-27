@@ -26,7 +26,15 @@
             <td th:text="${user.id}"></td>
             <td th:text="${user.email}"></td>
             <td th:text="${user.enabled ? 'Enabled' : 'Disabled'}"></td>
-            <td th:text="${user.roles}"></td>
+            <td>
+                <ul>
+                    <li th:each="role : ${user.roles}" th:text="${role.roleName}"></li>
+                </ul>
+            </td>
+
+<!--            <td th:each="role : ${user.roles}" th:text="${role.roleName}" th:join=", "></td>-->
+
+            <!--            <td th:text="${user.roles}"></td>-->
             <td>
                 <a th:href="@{/admin/edit/{id}(id=${user.id})}" class="btn btn-primary">Edit</a>
                 <a th:href="@{/admin/toggle_status/{id}(id=${user.id})}" class="btn btn-warning">Enable/Disable</a>
@@ -36,7 +44,7 @@
         </tbody>
     </table>
 
-    <a th:href="@{/admin/add-role}" class="btn btn-secondary">Assign Role</a>
+    <a th:href="@{/admin/add_role}" class="btn btn-secondary">Assign Role</a>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

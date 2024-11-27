@@ -29,6 +29,8 @@ public class City {
     @OneToMany(mappedBy = "city", cascade = CascadeType.PERSIST)
     private List<UserDetails> userDetailsList = new ArrayList<>(); // List of UserDetails
 
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL)
+    private List<Branch> branches;
     public void addUserDetail(UserDetails userDetails) {
         userDetailsList.add(userDetails);
         userDetails.setCity(this); // Set bi-directional relationship
